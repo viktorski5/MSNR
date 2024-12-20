@@ -1,0 +1,469 @@
+ % !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8]{inputenc} % make weird characters work
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage[english,serbian]{babel}
+%\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
+
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\usepackage{listings}
+
+\usepackage{array}
+
+%\newtheorem{primer}{Пример}[section] %ćirilični primer
+\newtheorem{primer}{Primer}[section]
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\scriptsize\ttfamily,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1000,                % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\begin{document}
+
+\title{Analiza izazova i olakšica za studente prve godine Informatike na  Matematičkom fakultetu\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
+
+\author{Stojanović Nikola, Vuk Stefanović, \\Kastratović Vladimir, Nikić Viktor\\
+mi241024@alas.matf.bg.ac.rs, mi241036@alas.matf.bg.ac.rs, \\mi241029@alas.matf.bg.ac.rs, mi241053@alas.matf.bg.ac.rs }
+
+%\date{9.~april 2015.}
+
+\maketitle
+
+\abstract{
+Rad ispituje šta je to lako, kao i koje poteškoće imaju studenti prve godine Informatike na Matematičkom fakultetu Univerziteta u Beogradu. Sprovedena je anonimna anketa u cilju prikupljanja informacija o iskustvima studenata sa tog smera. U ovom radu, na osnovu rezultata sprovedene ankete, tj. odgovora studenata/ispitanika, fokus je na analizi faktora koji studentima olakšavaju adaptaciju na studije i unapređenje metodoloških pristupa u nastavi.
+}
+
+
+\tableofcontents
+
+
+
+\section{Uvod}
+\label{sec:uvod}
+
+Na početku akademskog obrazovanja, studenti prve godine osnovnih studija suočavaju se sa izazovima prilagođavanja novom načinu učenja, složenijim sadržajima i višim očekivanjima u poređenju sa srednjoškolskim obrazovanjem. Iako svaki student ima jedinstvene sklonosti i interesovanja, određeni aspekti studiranja često se izdvajaju kao lakši i pristupačniji većini. Ovaj fenomen postavlja pitanje šta studenti prve godine najčešće doživljavaju kao najlakše u svojim akademskim aktivnostima i kako se ti aspekti mogu koristiti za olakšavanje njihove tranzicije sa srednjoškolskog na univerzitetsko obrazovanje i poslužiti kao oslonac za dalji razvoj i uspešan nastavak studija.\\
+
+Pomoću ankete koja je sprovedena prikuljene su razne korisne i zanimljive informacije kao što su: da li je studentima teži teorijski ili praktični deo ispita, koji način praćenja gradiva im vise odgovara, da li bi im odgovarao mešoviti ispitni rok... kao i mnoge druge informacije. Naravno i koji procenat ispitanika se opredeljuje za koje opcije. \\
+
+Smatra se da razumevanje ključnih oblasti u kojima studenti pronalaze olakšanje ili podršku pruža dragocenu priliku za univerzitete da optimizuju svoje nastavne metode i podršku. Fokusiranje na ovakve aspekte može doprineti smanjenju stresa, povećanju motivacije i većem uspehu studenata, postavljajući čvrste temelje za dalji akademski razvoj.\\
+
+
+
+\section{\textbf{Kritička analiza zasnovana na sumiranim rezultatima ankete}
+}
+\label{sec:naslov1}
+
+U procesu prilagođavanja na visokoškolsko obrazovanje, studenti prve godine se suočavaju sa značajnim izazovima koji uključuju promene u načinu učenja, povećane akademske zahteve i novu dinamiku organizacije vremena. Prema istraživanjima, studenti često identifikuju određene aspekte studiranja koji im deluju lakše, kao što su određeni kursevi ili predmeti koji im omogućavaju lakšu integraciju u akademski sistem. Na primer, studenti mogu lakše usvojiti praktične predmete koji se bave konkretnim temama i rešavanjem problema, dok apstraktne teorijske discipline često predstavljaju veći izazov \href{ https://doi.org/10.3102/00346543075001027}{[1]}. Takođe, prema studijama koje se bave adaptacijom studenata na visokoškolsko obrazovanje, efikasna komunikacija sa profesorima i asistentima, kao i postojanje jasnih i dostupnih resursa za podršku učenju, može pomoći studentima da se lakše snađu u novom okruženju  \href{https://archive.org/details/leavingcollegere0002tint/page/n5/mode/2up}{[2]}. Na osnovu ovih saznanja, postoji mogućnost da se identifikovani lakši predmeti koriste kao oslonac za razvoj strategija podrške studentima, kao što su organizovanje tutorijala, dodatnih vežbi ili mentorstva. Ovakvi pristupi mogu pomoći studentima da se lakše integrišu u akademsku zajednicu i unaprede svoje sposobnosti za suočavanje sa izazovima koji dolaze sa naprednijim sadržajem i višim zahtevima univerzitetskog obrazovanja. Osim toga, istraživanja pokazuju da postoji značajna uloga studenata u samoj organizaciji svog vremena i obaveza, pa bi univerziteti mogli uložiti u obuku studenata za efikasno upravljanje vremenom i postavljanje prioriteta, što bi im pomoglo da prevaziđu izazove na početku studija \href{https://doi.org/10.24926/jcotr.v29i2.4869}{[3]} \\
+
+Na osnovu ankete sprovedene među 102 studenata(48,5\% žene i 51,5\% muškarci) odeljenja za Informatiku Matematičkog fakulteta (osnovne i master studije), u nastavku rada pretstavljene su osnovne statistike i identifikacija obrazaca u (najrelevantnijim) odgovorima ispitanika. Kao i preporuke usmerene na određene implementacije u cilju poboljšanja studentskog iskustva. \\
+
+
+%\begin{table}[H]
+%\centering
+
+%\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+%\hline
+%\textbf{Ukupan broj ispitanika} & 102 \\
+%\hline
+
+%\end{tabularx}
+%\caption{Broj ispitanika}
+
+%\end{table}
+
+%\subsection{\textbf{Zastupljenost polova} }
+%\label{subsec:podnaslov1}
+
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics[width=1\linewidth]{graf.png}
+%    \caption{Zastupljenost polova
+%}
+%    \label{fig:enter-label}
+%\end{figure}
+
+%\textbf{Zaključak na osnovu Slike 1:} Polovi ispitanika ravnomerno zastupljeni, što omogućava objektivnu analizu bez značajnog rodnog disbalansa.\\
+
+\subsection{\textbf{Predznanje iz relevantne stručne oblasti} }
+\label{subsec:podnaslov2}
+
+Na osnovu \textbf{Tabele 1:} može se izvesti zaključak da većina ispitanika (60,8\%) ulazi na fakultet sa minimalnim ili bez ikakvog predznanja iz programiranja. Ovo ukazuje na potrebu za pružanjem dodatne podrške studentima.\\
+
+
+\captionsetup[table]{skip=10pt}
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Predznanje iz programiranja}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Predznanje iz \\ programiranja\end{tabular}} 
+& Nimalo & 36 & 35,3\% \\ \cline{2-4}
+& Malo & 26 & 25,5\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+Sa ovim podacima u vidu naveli bi smo neke preporuke fakultetu i profesorima kako bi se studenti sa malim ili nikakvim predznanjem iz programiranja lakše prilagodili fakultetu:\\
+
+\begin{itemize}
+    \item Pripremni kursevi pre upisa - Organizacija besplatnih ili povoljnih pripremnih radionica koje bi buduće studente upoznale sa osnovama programiranja, omogućavajući im lakši prelaz na akademske studije.
+    \item Mentorski programi - Povezivanje novih studenata sa starijim kolegama koji bi im pružali podršku u razumevanju osnovnih koncepata i pomagali u rešavanju početničkih izazova.
+    \item Obavezni uvodni predmeti - Implementacija uvodnog predmeta (npr.) „Osnove programiranja“ na prvoj godini, sa fokusom na praktične zadatke i rad na realnim primerima.
+    \item Dodatni časovi vežbi - Povećanje broja termina za vežbe i dodatna podrška kroz rad u manjim grupama za studente kojima su potrebni individualni pristupi.\\
+\end{itemize}
+
+
+\subsection{\textbf{Dostupnost informacija o studijskom programu} }
+\label{subsec:podnaslovN}
+
+Na osnovu \textbf{Tabele 2:} može se videti da iako je četvrtina ispitanika pristup informacijama ocenila kao „lak“, značajan broj njih pristup informacijama smatra izazovnim, što ukazuje na potrebu unapređenja dostupnosti resursa zarad poboljšanja smanjenja frustracija u vezi sa dostupnošću informacija.\\
+
+\captionsetup[table]{skip=10pt}
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Pristup informacijama o studijskom programu}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Pristup informacijama o \\ studijskom programu\end{tabular}} 
+& Izazovan & 35 & 34,3\% \\ \cline{2-4}
+& Lak & 27 & 26,5\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+Naveli bi smo nekoliko preporuka fakuletetu i studentima viših godina koji bi mogle pomoći studentima prve godine da lakše pristupe informacijama:\\
+
+\begin{itemize}
+    \item Centralizovani informativni portal - Kreiranje jedinstvene „online“ platforme na kojoj bi studenti mogli brzo pronaći sve potrebne informacije o programima, predmetima, ispitima i procedurama, uz mogućnost pretrage po ključnim pojmovima.
+    \item Redovno ažuriranje informacija - Uvođenje obaveze redovnog ažuriranja sadržaja na fakultetskim sajtovima i platformama, kako bi studenti imali uvek tačne i pravovremene informacije.
+    \item Informativne radionice i vodiči - Organizacija kratkih informativnih sesija uživo ili „online“, gde bi studenti dobili jasne smernice o korišćenju resursa i platformi, kao i odgovore na najčešća pitanja.\\
+\end{itemize}
+
+\subsection{\textbf{Ocena prijemnog ispita} }
+
+Po rezultatima prikazanim u \textbf{Tabeli 3:} možemo videti da prijemni ispit većina ispitanika doživljava kao zahtevan, te uviđamo potrebu za dopunama koje mogu doprineti smanjenju stresa i boljoj pripremi budućih kandidata za prijemni ispit, stoga bismo naveli sledeće preporuke:\\
+
+\begin{itemize}
+    \item Javni primeri zadataka i simulacije prijemnog ispita sa automatskom proverom odgovora - Postavljanje prošlih zadataka i simulacija prijemnog ispita na zvanični sajt fakulteta, omogućavajući kandidatima da se upoznaju sa strukturom i zahtevima ispita, bolje razumeju gde greše i šta treba dodatno da vežbaju.
+    \item Besplatni „online“ pripremni kursevi - Organizacija osnovnih „online“ kurseva iz ključnih oblasti prijemnog ispita, uključujući video-lekcije i interaktivne vežbe, kako bi kandidati imali pristup kvalitetnom materijalu bez dodatnih troškova.
+    \item Radionice sa profesorima i asistentima - Održavanje kratkih uživo ili „online“ radionica gde bi kandidati mogli da postavljaju pitanja, dobiju smernice i razjasne nedoumice u vezi sa pripremom za ispit.\\
+\end{itemize}
+
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Ocena prijemnog ispita}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Lakoća prijemnog ispita\end{tabular}} 
+& Teško & 46 & 45,1\% \\ \cline{2-4}
+& Izazovno & 32 & 30,4\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{\textbf{Najlakši (matematički i programerski) predmeti u prvoj godini}}
+
+Povratne informacije, prikazane u \textbf{Tabeli 4:}, mogu poslužiti kao osnova za osmišljavanje podrške studentima u složenijim matematičkim i programskim predmetima.\\
+Preporučili bi dodatne resurse za složene predmete tj. kreiranje detaljnih vodiča, zbirki zadataka i video-tutorijala za predmete koje studenti doživljavaju kao teške, uz primere korak-po-korak za rešavanje ključnih problema.\\
+
+\captionsetup[table]{skip=10pt}
+\begin{table}[H]
+\caption{Najlakši (matematički i programerski) predmeti u prvoj godini}
+\centering % Centriranje tabele
+\resizebox{\textwidth}{!}{ % Povećano na 130% širine stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Najlakši predmeti u prvoj\\  godini (matematički;\\  programerski)\end{tabular}} 
+& Diskretne strukture 1 i 2 & 64; 69 & 62,7\%; 67,6\% \\ \cline{2-4}
+& \begin{tabular}[c]{@{}c@{}}Uvod u organzaciju i \\ arhitekturu računara 1\end{tabular} & 84 & 82,4\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+\subsection{\textbf{Savladavanje teorijskih, odnosno praktičnih delova gradiva}}
+
+Praktični deo predmeta studentima je značajno lakši za savladavanje u poređenju sa teorijskim što možemo videti po rezultatima koji se nalaze u \textbf{Tabeli 5}. Potrebno je preduzeti određene mere kako bi se studentima olakšalo savladavanje teorijskog gradiva i omogućilo da ga efikasnije integrišu s praktičnim delom.\\
+
+\captionsetup[table]{skip=10pt}
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Savladavanje teorijskih, odnosno praktičnih delova gradiva}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Lakoća savladavanja \\ različitog gradiva\end{tabular}} 
+& Praktično gradivo & 78 & 76,5\%  \\ \cline{2-4}
+& Teorijsko gradivo & 24 & 23,5\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+Preporuke koje bi smo naveli mogle bi da pomognu studentima u savladavanju delova gradiva koji im se čine teški:  \\
+
+\begin{itemize}
+    \item Interaktivna predavanja i vizualizacije - Koristiti interaktivne metode poput animacija, dijagrama i praktičnih primera tokom objašnjavanja teorijskih koncepata, kako bi studenti bolje razumeli njihovu primenu u stvarnim situacijama.
+    \item Povezivanje teorije i prakse - Uvesti zadatke koji kombinuju teorijska znanja sa praktičnim primenama, poput rešavanja problema iz stvarnog sveta, projekata ili studija slučaja, čime bi se smanjila percepcija teorije kao apstraktne.
+    \item Razbijanje gradiva na manje celine - Podeliti kompleksno teorijsko gradivo na manje, lako savladive segmente, uz redovne kvizove i zadatke za proveru razumevanja nakon svake celine.\\
+\end{itemize}
+
+\subsection{\textbf{Korisnost konsultacija sa profesorima/asistentima} }
+
+Po podavima u \textbf{Tebeli 6:} možemo videti da većina studenata nisu koristili konsultacije, što ukazuje na potencijal za unapređenje dostupnosti i promocije ovih aktivnosti.\\
+
+Preporuke šta bi moglo da se preduzme da bi se posećenost ali i korist konsultacija poboljšala:\\
+
+\begin{itemize}
+    \item Promovisanje prednosti konsultacija - Organizovati informativne kampanje koje naglašavaju kako konsultacije mogu pomoći studentima u razumevanju gradiva, rešavanju problema i pripremi za ispite, koristeći e-mail, društvene mreže i oglasne table.
+    \item Fleksibilni termini i online opcije - Uvesti širi raspon termina za konsultacije, uključujući popodnevne i večernje časove, kao i online sesije kako bi se povećala dostupnost studentima sa različitim rasporedima i potrebama.
+    \item Integracija konsultacija u nastavni proces - Povezati konsultacije sa konkretnim zadacima ili projektima, čineći ih obaveznim delom procesa učenja i omogućavajući studentima da ih direktno povežu sa svojim akademskim uspehom.
+    \item Pristupačnost i transparentnost informacija - Jasno objaviti rasporede konsultacija i kontakt informacije profesora i asistenata na platformama koje studenti redovno koriste, poput fakultetskog sajta ili aplikacija za učenje.
+    \item Anketiranje i prilagođavanje - Sprovoditi redovne ankete kako bi se identifikovali razlozi za nisku posećenost konsultacija i na osnovu rezultata prilagoditi termin, način izvođenja ili format ovih aktivnosti.\\
+
+\end{itemize}
+
+\captionsetup[table]{skip=10pt}
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Korisnost konsultacija sa profesorima/asistentima}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Koliko konsultacije \\ olakšavaju studiranje\end{tabular}} 
+& Nisam išao/la na konsultacije & 56 & 54,5\% \\ \cline{2-4}
+& Srednje & 16 & 15,7\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\subsection{\textbf{Preferencije u vezi načina praćenja gradiva} }
+
+U \textbf{Tabeli 7} možemo videti da većina ispitanika smatra da je opcija praćenja gradiva preko video snimaka najpogodnija. Postoji potreba za unapređenjem iskustva praćenja gradiva iz učionice i preko „online“ platformi.\\
+Naša preporuka je da u učionici i preko „online“ platformi, treba povećati interaktivnosti i dostupnosti resursa, kako bi studenti aktivnije učestvovali u procesu učenja na ove načine. U učionici to može uključivati korišćenje vizualnih alata i angažovanje studenata kroz diskusije i kvizove, dok na „online“ platformama to podrazumeva implementaciju interaktivnih elemenata, kao što su zadaci, kvizovi i praćenje napretka, uz redovno ažuriranje i lako dostupne materijale.\\
+
+
+
+\captionsetup[table]{skip=10pt}
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Preferencije u vezi načina praćenja gradiva}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Praćenje gradiva \\ iz učionice\end{tabular}} 
+& Izazovno & 35 & 34,3\% \\ \cline{2-4}
+& Nisam pratio/la & 26 & 25,5\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\vspace{0.5cm}  % Dodavanje vertikalnog razmaka između tabela
+
+\begin{table}[H]
+\centering % Centriranje tabele
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}Praćenje gradiva preko \\ „online“ platformi\end{tabular}} 
+& Nisam pratio/la & 50 & 49\% \\ \cline{2-4}
+& Lako & 15 & 14,7\% \\ \cline{2-4}
+& Izazovno & 15 & 14,7\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\vspace{0.5cm}  % Dodavanje vertikalnog razmaka između tabela
+
+\begin{table}[H]
+\centering % Centriranje tabele
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Praćenje gradiva \\ preko video snimaka\end{tabular}} 
+& Lako & 41 & 40,2\% \\ \cline{2-4}
+& Nisam gledao/la & 19 & 18,6\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+
+\subsection{\textbf{Mogućnost mešovitog ispitnog roka} }
+
+Na osnovu \textbf{Tabele 8} ispitanicima/studentima bi postojanje dodatnog mešovitog roka znatno olakšalo studiranje.\\
+
+Preporučuje se ozbiljno razmatranje ove opcije, jer omogućava veću fleksibilnost u pripremama i smanjuje pritisak na studente. Za uspešno uvođenje ovakvog roka, važno je sprovesti pilotažu na manjim grupama studenata i pratiti njihove reakcije, kako bi se izvršila dalja prilagođavanja na osnovu stvarnih potreba. Takođe, važno je obezbediti odgovarajuću podršku nastavnicima u implementaciji novih ispitnih metoda.\\
+
+\begin{table}[H]
+\centering
+\caption{Mogućnost mešovitog ispitnog roka}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija}  
+& \textbf{Najčešće birana opcija} 
+& \textbf{Broj ispitanika} 
+& \textbf{Procenat (\%)} \\ 
+\hline
+\begin{tabular}[c]{@{}c@{}}Beneficije mešovitog \\ ispitnog roka\end{tabular} 
+& Veoma značajn & 71 & 69,6\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+\newpage
+
+\subsection{\textbf{Prilagođavanje obimu i zahtevnosti studijskog materijala}}
+
+Mozemo videti iz \textbf{Tebele 9} da značajan broj (73,6\%) nailazi na poteškoće pri prilagođavanju studijskom materijalu. Potrebno je identifikovati rešenja koja studentima mogu pomoći da prevaziđu poteškoće u učenju.\\
+
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Prilagođavanje obimu i zahtevnosti studijskog materijala}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Jednostavnost \\ prilagođavanja\end{tabular}} 
+& Izazovno & 38 & 37,3\% \\ \cline{2-4}
+& Teško & 37 & 36,3\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+Preporuke rešenja koje bi mogle da pomognu za rešenje ovog problema:\\
+
+\begin{itemize}
+    \item Interaktivne učionice i „flip“ nastava: Korišćenje modela „flip“ nastave, gde studenti prvo samostalno istražuju gradivo uz online materijale, a zatim se u učionici fokusiraju na diskusiju, rešavanje problema i interaktivne aktivnosti koje pomažu da teorija postane jasnija  \href{ https://doi.org/10.1162/edfp_a_00314}{[4]}.
+    \item „Gamifikacija“ u učenju: Uvođenje elementa „gamifikacije“ u studijski proces, kao što su takmičenja, nagrade za postignuća ili interaktivni izazovi koji mogu učiniti učenje zabavnijim i motivišućim \href{  https://doi.org/10.3390/educsci14060639}{[5]}. 
+    \item Radionice kreativnog učenja: Organizovanje radionica koje podstiču kreativne metode učenja, poput grupnog rešavanja problema, vizualizacije apstraktnih koncepata ili razvijanja projekata koji primenjuju teorijsko znanje na konkretne izazove.\\
+\end{itemize}
+
+\subsection{\textbf{Usklađivanje studiranja i privatnih obaveza}}
+
+Možemo videti da na osnovu \textbf{Tabele 10:} Značajan broj (njih 73,7\%) nailazi na poteškoće pri uklađivanju obaveza na prvoj godini.\\
+
+To bi se moglo rešiti na neki od sledećih načina  za koje mislimo da bi mogli da pomognu studentima pri usklađivanju studiranja i privatnih obaveza:\\
+
+\begin{itemize}
+    \item Aplikacija za praćenje obaveza i vremena - Razviti mobilnu aplikaciju Fakulteta ili promovisati već postojeće digitalne alate koji studentima pomažu da balansiraju akademske i privatne obaveze. Aplikacija bi uključivala podsetnike, praćenje napretka i preporuke za efikasno upravljanje vremenom.
+    \item Tehnike upravljanja vremenom i stresom - Organizovati radionice strategijama za smanjenje stresa i balansiranje obaveza, kako bi studenti razvili veštine koje im pomažu da se lakše nose sa izazovima prve godine.\\
+\end{itemize}
+
+
+
+\begin{table}[H]
+\centering % Centriranje tabele
+\caption{Usklađivanje studiranja i privatnih obaveza}
+\resizebox{\textwidth}{!}{ % Automatsko prilagođavanje širini stranice
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Kategorija} & \textbf{Najčešće birane opcije} & \textbf{Broj ispitanika} & \textbf{Procenat (\%)} \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Upravljanje vremenom \\ na prvoj godini\end{tabular}} 
+& Izazovno & 40 & 39,2\% \\ \cline{2-4}
+& Teško & 25 & 34,5\% \\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+\subsection{\textbf{Dodatni komentari ispitanika}}
+
+\textbf{a) }\textbf{Otvoreno pitanje 1: }Odredjeni aspekti fakultetskog obrazovanja koji su se ispostavili kao lakši u odnosu na srednju školu i očekivanja.
+
+Odgovori ispitanika na ovo otvoreno pitanje uglavnom su se odnosili na visok stepen fleksibilnosti, odnosno veću slobodu upravljanja vremenom, budući da prisustvo predavanjima i vežbama nije obavezno, već je na dobrovoljnoj bazi.\\
+
+\textbf{b) }\textbf{Otvoreno pitanje 2: }Saveti i trikovi za buduće studente fakulteta kako bi im olakšali studiranje.
+
+Sugestije ispitanika su se većinski odnosile na sistematično i redovno učenje, tj. razvijanje i negovanje radnih navika.
+
+\textbf{*} Ove statistike mogu služiti kao osnova za dalja istraživanja i unaprđenje obrazovnog iskustva.\\
+
+
+
+
+\section{Zaključak}
+\label{sec:zakljucak}
+
+U savremenom visokoškolskom obrazovanju, ključni izazovi u prilagođa-
+vanju studenata uključuju efikasno upravljanje obimnim gradivom i balansiranje akademskih i ličnih obaveza. Međutim, istraživanjima je pokazano da uspešna adaptacija zavisi od kombinacije institucionalne podrške, inovativnih pedagoških pristupa i angažovanja samih studenata  \href{https://firstliteracy.org/wp-content/uploads/2015/07/How-Learning-Works.pdf}{[6]}. Dodavanje elemenata personalizovanog učenja kroz upotrebu tehnologije, kao što su platforme za adaptivno učenje, takođe se pokazalo kao značajan faktor za poboljšanje studentskog uspeha \href{https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.770637/full}{[7]}. \
+
+U skladu sa ovim tvrdnjama, verujemo da gorepomenute preporuke, odnosno inicijative, imaju potencijal da ne samo olakšaju adaptaciju studenata, već i da podignu kvalitet obrazovanja na višem nivou, doprinoseći dugoročnom razvoju univerzitetskog obrazovanja i boljim ishodima za buduće generacije studenata
+. 
+\newpage
+\phantomsection\label{sec:literatura}
+\addcontentsline{toc}{section}{Literatura}
+\appendix
+\bibliography{seminarski} 
+\bibliographystyle{plain}
+
+\appendix
+[1] Gijbels, David \& Dochy, Filip \& Van den Bossche, Piet \& R.Segers, Mien. Effects of Problem-Based Learning: A Meta-Analysis From the Angle of Assessment. Review of Educational Research, 7:27–61, 2005. on-line at: \href{https://doi.org/10.3102/00346543075001027}{https://doi.org/10.3102/00346543075001027}.\\
+
+[2] Tinto, Vincent. \textit{Leaving college: rethinking the causes and cures of student attrition}. University of Chicago Press, Chicago, 1993. on-line at: \href{https://archive.org/details/leavingcollegere0002tint/page/n5/mode/2up}{https://archive.org/details/leavingcollegere0002tint/page/n5/mode/2up}.\\
+
+
+[3] 
+Johnson, C., \& Gansemer-Topf, A. College Belonging. How First-Year and First-Generation Students Navigate Campus Life. Journal of College Orientation, Transition, and Retention, 29(2). 2022. on-line at: \href{https://doi.org/10.24926/jcotr.v29i2.4869}{https://doi.org/10.24926/jcotr.v29i2.4869}.\\
+
+[4] Elizabeth Setren, Kyle Greenberg, Oliver Moore, Michael Yankovich. Effects of Flipped Classroom Instruction: Evidence from a Randomized Trial. Education Finance and Policy, 16(3): 363–387. 2021. on-line at doi: \href{https://doi.org/10.1162/edfp_a_00314}{https://doi.org/10.1162/edfp\_a\_00314}.\\
+
+[5] Jaramillo-Mediavilla, L., Basantes-Andrade, A., Cabezas-González, M., Casillas-Martín, S. Impact of Gamification on Motivation and Academic Performance: A Systematic Review. Educ. Sci, 14(639), 2024. on-line at: \href{https://doi.org/10.3390/educsci14060639}{https://doi.org/10.3390/educsci14060639}.\\
+
+[6] Susan A. Ambrose, Michael W. Bridges, Michele DiPietro, Marsha C. Lovett, Marie K. Norman. \textit{How Learning Works: Seven Research-Based Principles for Smart Teaching}. Jossey-Bass, San Francisco, 2010. on-line at: \href{https://firstliteracy.org/wp-content/uploads/2015/07/How-Learning-Works.pdf}{https://firstliteracy.org/wp-content/uploads/2015/07/How-Learning-Works.pdf}.\\
+
+[7] Ling, H.-C., \& Chiang, H.-S. Learning Performance in Adaptive Learning Systems: A Case Study of Web Programming Learning Recommendations. Frontiers in Psychology, 13, 2022. on-line at: \href{https://doi.org/10.3389/fpsyg.2022.770637}{https://doi.org/10.33\\89/fpsyg.2022.770637}.
+
+
+\end{document}
